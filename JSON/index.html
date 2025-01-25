@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       div{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        height:100vh;
+        flex-direction: column;
+       }
+       #btn{
+        border:2px solid;
+        background-image: linear-gradient(rgb(247, 12, 227),rgb(0, 238, 255));
+        width:200px;
+        height:50px;
+        color:white;
+        font-weight: bold;
+
+       }
+       #data{
+        color:red;
+       }
+    </style>
+</head>
+<body>
+    <div>
+    <input type="button" id="btn" value="button">
+    <p id="data"></p>
+</div>
+    <script>
+
+
+
+        let btns=document.getElementById("btn")
+        let dataele=document.getElementById("data")
+        btns.addEventListener('click',change)
+        function change(){
+            var xhr=new XMLHttpRequest()
+            xhr.open("GET","",true)
+            xhr.send()
+            xhr.onprogress=function(){
+              dataele.innerText="Loading..."
+                   
+            }
+            xhr.onload=function(){
+                dataele.innerText=xhr.responseText
+            }
+        }
+        
+
+    </script>
+</body>
+</html>
