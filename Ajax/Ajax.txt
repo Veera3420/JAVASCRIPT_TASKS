@@ -1,0 +1,3 @@
+Hello, this is the content of the text file.
+
+You can load this file dynamically using an AJAX call.
